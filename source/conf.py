@@ -27,7 +27,15 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.pngmath', 'sphinx.ext.ifconfig', 'sphinx.ext.viewcode']
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.pngmath',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -42,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Infantium'
+project = u'Infantium Dev Center'
 copyright = u'2013, Infantium S.L. Barcelona, Spain.'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -95,20 +103,18 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'flask'
-#html_theme = 'bootstrap'
-
-templates_path = ['_templates']
+# html_theme = 'flask'
+# html_theme = 'bootstrap'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "Infantium Dev Center",
+    #'navbar_title': "Infantium Dev Center",
     # Global TOC depth for "site" navbar tab. (Default: 1)
     # Switching to -1 shows all levels.
-    'globaltoc_depth': 2,
+    # 'globaltoc_depth': 2,
 
     # Include hidden TOCs in Site navbar?
     #
@@ -117,19 +123,19 @@ html_theme_options = {
     # will break.
     #
     # Values: "true" (default) or "false"
-    'globaltoc_includehidden': "true",
+    #'globaltoc_includehidden': "true",
 
     # HTML navbar class (Default: "navbar") to attach to <div> element.
     # For black navbar, do "navbar navbar-inverse"
-    'navbar_class': "navbar navbar-inverse",
+    # 'navbar_class': "navbar navbar-inverse",
 
     # Fix navigation bar to top of page?
     # Values: "true" (default) or "false"
-    'navbar_fixed_top': "true",
+    # 'navbar_fixed_top': "true",
 
     # Location of link to source.
     # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "footer",
+    # 'source_link_position': "footer",
 
     # Bootswatch (http://bootswatch.com/) theme.
     #
@@ -151,7 +157,7 @@ html_theme_options = {
     # * spruce
     # * superhero
     # * united
-    'bootswatch_theme': "journal",
+    # 'bootswatch_theme': "journal",
 }
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -236,8 +242,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Infantium.tex', u'Infantium Documentation',
-   u'Infantium', 'manual'),
+    ('index', 'Infantium.tex', u'Infantium Documentation',
+     u'Infantium', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -267,7 +273,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'infantium', u'Infantium Documentation',
-     [u'danigosa'], 1)
+     [u'Infantium'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -280,9 +286,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Infantium', u'Infantium Documentation',
-   u'Infantium', 'Infantium', 'Developing Minds.',
-   'Miscellaneous'),
+    ('index', 'Infantium', u'Infantium Documentation',
+     u'Infantium', 'Infantium', 'Developing Minds.',
+     'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
