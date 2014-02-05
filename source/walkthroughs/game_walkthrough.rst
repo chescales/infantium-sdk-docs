@@ -5,9 +5,10 @@
 =====================================================
 
 :Author: Infantium <www.infantium.com>
-:Date: $Date: 2013-09-20 01:10:53 +0000 (Wed, 20 Sep 2013) $
-:Revision: $Revision: 1 $
-:Description: This tutorial show how to send a game rawdata, detailing the different required functions with its parameters.
+:Date: |today|
+:Version: |version|
+:Description: This tutorial shows how to send a game rawdata, detailing the different required functions with its
+    parameters.
 
 Introduction
 ===========================
@@ -15,8 +16,8 @@ Introduction
 Dependencies
 ---------------------------
 
-This SDK requires the library LoopJ v1.4.3 to be included in the project for proper functioning. You can find it in the following link:
-`LoopJ Library 1.4.3`_
+This SDK requires the library LoopJ v1.4.3 to be included in the project for proper functioning. You can find it in
+the following link: `LoopJ Library 1.4.3`_
 
 Android Permissions
 ---------------------------
@@ -29,8 +30,8 @@ The present SDK requires the following Android Permissions in the App manifest:
 Singleton Pattern
 ---------------------------
 
-Infantium_SDK has been created using a Singleton pattern, so the only way to get an instance of the class is by calling the function:
-`getInfantium_SDK(Context context)`_. The SDK requires the *Context* of the Android Activity.
+Infantium_SDK has been created using a Singleton pattern, so the only way to get an instance of the class is by
+calling the function: `getInfantium_SDK(Context context)`_. The SDK requires the *Context* of the Android Activity.
 
 .. topic:: Example:
 
@@ -40,9 +41,10 @@ Infantium_SDK has been created using a Singleton pattern, so the only way to get
 The Handler
 ---------------------------
 
-As most functions work asynchronously, an HttpHandler must be implemented. In order to simplify this task Infantium created a class called
-*InfantiumAsyncResponseHandler* that provides the methods that must be implemented by the Developers. Its methods are called after making a
-request to the API, such as creating a new player, getting logged or sending an e-book rawdata.
+As most functions work asynchronously, an HttpHandler must be implemented. In order to simplify this task Infantium
+created a class called *InfantiumAsyncResponseHandler* that provides the methods that must be implemented by the
+Developers. Its methods are called after making a request to the API, such as creating a new player, getting logged
+or sending an e-book rawdata.
 
 Here we can see an example of how to implement an *InfantiumasyncResponseHandler*:
 
@@ -60,8 +62,9 @@ Here we can see an example of how to implement an *InfantiumasyncResponseHandler
 		}
  };
 
-In this example, if the user creates the *Gameplay* successfully, the SDK will call the *onSuccessCloseGameplay()*. If a problem comes up,
-it will call the *onFailureCloseGameplay(String description)*. The description is a short descriptive message that explains where or why the problem has arised.
+In this example, if the user creates the *Gameplay* successfully, the SDK will call the *onSuccessCloseGameplay()*.
+If a problem comes up, it will call the *onFailureCloseGameplay(String description)*. The description is a short
+descriptive message that explains where or why the problem has arised.
 
 Walkthrough
 =====================
@@ -69,8 +72,9 @@ Walkthrough
 1. Configure the SDK
 ----------------------------------------
 
-First of all, we have to configure the SDK with some data. This data will be, on one hand, the developer API credentials for contacting with Infantium.
-The other function we should call is the *setDeviceInfo()* function in order to set the current device pixels
+First of all, we have to configure the SDK with some data. This data will be, on one hand, the developer API
+credentials for contacting with Infantium. The other function we should call is the *setDeviceInfo()* function in
+order to set the current device pixels
 
 .. topic:: Function:
 
@@ -93,56 +97,33 @@ We have to set the ContentApp UUID of the game before creating a gameplay.
 Possible responses:
 
  - *onSuccessContentApp()*: the contentapp UUID has been found in the Infantium market.
- - *onFailureContentApp(String description)*: a problem occurred when trying to obtain the contentapp info from the market.
+ - *onFailureContentApp(String description)*: a problem occurred when trying to obtain the contentapp info from the
+ market.
 
-3. Get Player UUID (from the Infantium App):
-----------------------------------------------
-This function will get the UUID of the selected player in the InfantiumApp to be used by the SDK. This requires to add a few lines in the Android
-Manifest of the App adapting to Infantium. The following receiver should be added to the Manifest:
 
-.. code-block:: xml
-
-    <receiver android:name="com.infantium.android.sdk.ReceivePlayer">
-        <intent-filter>
-            <action android:name="com.infantium.android.sdk.ReceivePlayer"></action>
-        </intent-filter>
-    </receiver>
-
-This receiver should be added inside of the <application> tag of your Manifest. Once this is added, the call to get the Player (and this is the step 3) is:
-
-.. topic:: Function:
-
- `getPlayerUUIDFromApp()`_
-
-Possible responses:
-
- - *onSuccessGetPlayerByUUID()*: Player was successfully obtained, you can now proceed to the next step.
- - *onFailureGetPlayerByUUID(String description)*: A problem occurred while obtaining the player, check the description for more details.
-
-4. Create Gameplay:
+3. Create Gameplay:
 ----------------------------------------------
 
-When we have set the *contentapp_uuid* and the player_uuid we can create a *Gameplay*.
+When we have set the *contentapp_uuid* we can create a *Gameplay*.
 
 .. topic:: Function:
 
  `createGameplay(String subcontent_uuid)`_
 
-.. NOTE:: the createGameplay() is only used to create gameplays of e-books.
-.. NOTE:: Game gameplays can be created with an open e-book gameplay. Not vice versa.
-
 Possible responses:
 
  - *onSuccessCreateGameplay()*: The gameplay is created successfully.
- - *onFailureCreateGameplay(String description)*: If the player is not selected, the content is not informed or there is another gameplay opened
+ - *onFailureCreateGameplay(String description)*: If the player is not selected, the content is not informed or there
+ is another gameplay opened
 
  
-5. Rawdata Functions:
+4. Rawdata Functions:
 -------------------------------------
 
-Once the gameplay is created, we can call the rawdata functions to introduce elements or sounds. Additionally, when the game starts (the kid can see the objects
-in the screen), the function `startPlaying()`_ should be called. If any new elements, sounds or animations are displayed they can be added afterwards. Nevertheless,
-the elements already on the screen when the kid starts playing should be added before the *startPlaying* method invocation.
+Once the gameplay is created, we can call the rawdata functions to introduce elements or sounds. Additionally, when the
+game starts (the kid can see the objects in the screen), the function `startPlaying()`_ should be called. If any new
+elements, sounds or animations are displayed they can be added afterwards. Nevertheless, the elements already on the
+screen when the kid starts playing should be added before the *startPlaying* method invocation.
 
  - Required rawdata functions:
 
@@ -176,7 +157,7 @@ the elements already on the screen when the kid starts playing should be added b
   - `finishDragging(List<Integer> position, String sound_id)`_
   - `finishDragging(List<Integer> position, String sound_id, int max_x, int max_y)`_
 
-6. Send Game Rawdata:
+5. Send Game Rawdata:
 ------------------------------
 
 We finally call this function when we want to send the rawdata.
@@ -190,7 +171,7 @@ Possible responses:
  - *onSuccessGameRawdata()*: The game rawdata is posted successfully.
  - *onFailureGameRawdata(String description)*: A problem occurred when sending the game rawdata.
 
-7. Close Gameplay
+6. Close Gameplay
 ------------------------------
 
 Last step but not least important. If the gameplay is not closed, the SDK will not be able to create new Gameplays.
@@ -202,7 +183,8 @@ Last step but not least important. If the gameplay is not closed, the SDK will n
 Possible responses:
 
  - *onSuccessCloseGameplay()*: Gameplay closed succesfully.
- - *onFailureCloseGameplay(String description)*: If the gameplay is not started or another problem occurs when closing the gameplay.
+ - *onFailureCloseGameplay(String description)*: If the gameplay is not started or another problem occurs when closing
+ the gameplay.
 
 
 .. _INTERNET: http://developer.android.com/reference/android/Manifest.permission.html#INTERNET

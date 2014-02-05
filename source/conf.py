@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Infantium Dev Center'
-copyright = u'2013, Infantium S.L. Barcelona, Spain.'
+copyright = u'2014, Infantium S.L. Barcelona, Spain'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -303,3 +303,9 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
+
+# A string of reStructuredText that will be included at the end of every source file that is read.
+# This is the right place to add substitutions that should be available in every file.
+rst_epilog = """
+.. |version| replace:: %s
+""" % version
