@@ -1,0 +1,11 @@
+.DS_Store
+*.pyc
+*~
+*.db
+*.log
+/logs/
+pip-log.txt
+.idea/
+.project
+.vagrant
+Vagrantfile
