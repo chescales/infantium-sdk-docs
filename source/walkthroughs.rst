@@ -2,9 +2,9 @@
 Android Walkthroughs
 ======================
 
-Infantium Android SDK, current version 1.0.5.0, allows Developers to contact with the Infantium API more easily.
+Infantium Android SDK, current version |version|, allows Developers to contact with the Infantium API more easily.
 
-Here you can see the walkthroughs for creating and sending e-book and game rawdatas to the API in Infantium.
+Here you can see the walkthroughs for creating and sending e-book and game *RawData* to the API of Infantium.
 
 .. toctree::
     :maxdepth: 1

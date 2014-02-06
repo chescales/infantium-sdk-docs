@@ -16,8 +16,7 @@ Contents:
 
    walkthroughs.rst
 
-Indices and tables
-==================
-
-* :ref:`search`
+.. Indices and tables
+   ==================
+   * :ref:`search`
 

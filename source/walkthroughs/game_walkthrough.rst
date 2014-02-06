@@ -61,8 +61,8 @@ Here we can see an example of how to implement an *InfantiumasyncResponseHandler
 		}
  };
 
-In this example, if the user creates the *Gameplay* successfully, the SDK will call the *onSuccessCloseGameplay()*.
-If a problem comes up, it will call the *onFailureCloseGameplay(String description)*. The description is a short
+In this example, if the user creates the *Gameplay* successfully, the SDK will call the `onSuccessCloseGameplay()`_.
+If a problem comes up, it will call the `onFailureCloseGameplay(String description)`_. The description is a short
 descriptive message that explains where or why the problem has arised.
 
 Walkthrough
@@ -72,58 +72,52 @@ Walkthrough
 ----------------------------------------
 
 First of all, we have to configure the SDK with some data. This data will be, on one hand, the developer API
-credentials for contacting with Infantium. The other function we should call is the *setDeviceInfo()* function in
-order to set the current device pixels
+credentials for contacting with Infantium (`setDeveloperCredentials(String api_user, String api_key)`_). The other
+function we should call is the `setDeviceInfo(w_dev, h_dev)`_ function in order to set the current device pixels.
+Finally, if you want to receive feedback from the SDK, you will need to implement a Handler. This will be further
+explained in the Handler section. You can do that with the `setDeveloperHandler(InfantiumAsyncResponseHandler handler)`_
+function.
 
-.. topic:: Function:
+.. code-block:: java
 
- `setDeveloperCredentials(String api_user, String api_key)`_
-
- `setDeviceInfo(w_dev, h_dev)`_
-
- `setDeveloperHandler(InfantiumAsyncResponseHandler handler)`_
+   // Configure the SDK
+   infantium.setDeveloperCredentials(api_user, api_key);
+   infantium.setDeviceInfo(w_dev, h_dev);
+   infantium.setDeveloperHandler(handler);
 
 
 2. Set Game ContentApp UUID
 ---------------------------------------------
 
-We have to set the ContentApp UUID of the game before creating a gameplay.
+The next step if to set the *contentapp_uuid*, which will identify the App against the server. To configure it the
+method `setContentAppUUID(String contentapp_uuid)`_ should be used.
 
-.. topic:: Function:
+.. code-block:: java
 
- `setContentAppUUID(String contentapp_uuid)`_
-
-Possible responses:
-
- - *onSuccessContentApp()*: the contentapp UUID has been found in the Infantium market.
- - *onFailureContentApp(String description)*: a problem occurred when trying to obtain the contentapp info from the
- market.
+   // Set the App contentapp_uuid
+   infantium.setContentAppUUID(contentapp_uuid);
 
 
 3. Create Gameplay:
 ----------------------------------------------
 
-When we have set the *contentapp_uuid* we can create a *Gameplay*.
+When we have set the *contentapp_uuid* we can create a *Gameplay* with: `createGameplay(String subcontent_uuid)`_. The
+*subcontent_uuid* will be provided to you by Infantium, which will be a unique identifier for your activity.
 
-.. topic:: Function:
+.. code-block:: java
 
- `createGameplay(String subcontent_uuid)`_
-
-Possible responses:
-
- - *onSuccessCreateGameplay()*: The gameplay is created successfully.
- - *onFailureCreateGameplay(String description)*: If the player is not selected, the content is not informed or there
- is another gameplay opened
+   // Send the previously introduced data
+   infantium.createGameplay(subcontent_uuid);
 
  
 4. Rawdata Functions:
 -------------------------------------
 
-The GamePlay is created once everytime the kid starts a game session. Now, for every activity played during that time,
-a RawData object is sent, which will contain the information we need to analyze. This contains, among other generic
+The *GamePlay* is created once everytime the kid starts a game session. Now, for every activity played during that time,
+a *RawData* object is sent, which will contain the information we need to analyze. This contains, among other generic
 stats, the elements in the screen, the actions the kid performs, and some info about the results.
 
-When the kid enters one of the activities of the game (i.e. starts playing the game), the RawData is filled in three
+When the kid enters one of the activities of the game (i.e. starts playing the game), the *RawData* is filled in three
 phases:
 
 1. Register the elements in the screen.
@@ -166,9 +160,9 @@ phases:
 2. Start the timers and register the actions of the kid.
 
  When the kid starts interacting with the screen, we will call the `startPlaying()`_ method. This will trigger the
- timers inside the SDK. The SDK will automatically handle timestamps of when the kid taps the screen and the elements
- show, which will allow us to get a lot of statistics about the child's development, with no effort at all for the
- developer.
+ timers inside the SDK. The SDK will automatically handle the timestamps when the kid taps the screen and the elements
+ show up, which will allow us to get a lot of statistics about the child's development, with no effort at all on the
+ developer side.
 
  For each time the kid taps on the screen, this will be registered with the `tapOnObjects(String element_id)`_ method.
  In this method, it must be pointed out if the interaction represents a *success*, an *error* or *none* of both. Here
@@ -210,15 +204,14 @@ a new activity, the flow would go again to the 4th step! If the kid goes back to
 6. Close Gameplay
 ------------------------------
 
-Last step but not least important: `closeGameplay()`_. If the gameplay is not closed, the SDK will not be able to create new Gameplays.
+Last step but not least important: `closeGameplay()`_. If the *GamePlay* is not closed, the SDK will not be able to
+create new ones.
 
 
-Possible responses:
+7. Conclusions
+---------------
 
- - *onSuccessCloseGameplay()*: Gameplay closed succesfully.
- - *onFailureCloseGameplay(String description)*: If the gameplay is not started or another problem occurs when closing
- the gameplay.
-
+And with this
 
 .. _INTERNET: http://developer.android.com/reference/android/Manifest.permission.html#INTERNET
 .. _ACCESS_NETWORK_STATE: http://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE
@@ -226,12 +219,11 @@ Possible responses:
 
 .. _setDeviceInfo(w_dev, h_dev): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeviceInfo(int,%20int)
 .. _onFailureCloseGameplay(String description): http://android.sdk.infantium.com/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onFailureCloseGameplay(java.lang.String)
+.. _onSuccessCloseGameplay(): http://android.sdk.infantium.com/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onSuccessCloseGameplay()
 .. _getInfantium_SDK(Context context): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#getInfantium_SDK(android.content.Context)
 .. _setDeveloperCredentials(String api_user, String api_key): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperCredentials(java.lang.String,%20java.lang.String)
 .. _setDeveloperHandler(InfantiumAsyncResponseHandler handler): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperHandler(com.infantium.android.sdk.InfantiumAsyncResponseHandler)
 .. _setContentAppUUID(String contentapp_uuid): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setContentAppUUID(java.lang.String)
-.. _setContentUUID(String ebook_content_uuid): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setContentUUID(java.lang.String)
-.. _getPlayerUUIDFromApp(): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#getPlayerUUIDFromApp()
 .. _createGameplay(String subcontent_uuid): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#createGameplay(java.lang.String)
 .. _startPlaying(): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#startPlaying()
 
