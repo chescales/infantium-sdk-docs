@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Infantium's documentation!
+Welcome to Infantium's SDK documentation!
 =====================================
 
-**More about the project at** http://www.infantium.com/
+**What is it?**
 
 Contents:
 ----------
@@ -14,7 +14,10 @@ Contents:
 .. toctree::
    :maxdepth: 3
 
-   walkthroughs.rst
+   download_install_configure.rst
+   getting_started.rst
+   advanced_guides.rst
+   class_reference.rst
 
 .. Indices and tables
    ==================
