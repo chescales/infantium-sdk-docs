@@ -4,9 +4,16 @@
    contain the root `toctree` directive.
 
 Welcome to Infantium's SDK documentation!
-=====================================
+=========================================
 
-**What is it?**
+Infantium's SDK is specially focused to adapt mobile applications to work and communicate with Infantium servers. It's
+purpose is to provide an intuitive and easy to use interface to communicate your App with Infantium's cognitive analysis
+platform.
+
+The SDK is programmed in native Android/Java, but is also deployed in other frameworks through a ever increasing set
+of different plugins. Check the `Plugins`_ page to check if your framework has already been adapted! Otherwise, don't
+get discouraged! Contact us and we will be more than happy to give you assistance to create a new plugin in any
+framework you might use.
 
 Contents:
 ----------
