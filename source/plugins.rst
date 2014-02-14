@@ -1,8 +1,8 @@
 .. _plugins:
 
-==========
-Plugins
-==========
+==================
+Appendix: Plugins
+==================
 
 Plugins associated:
 

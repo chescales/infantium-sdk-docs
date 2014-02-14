@@ -5,13 +5,11 @@ Download
 The Infantium SDK is provided as a *jar* container, that is, as a Java library. You can find the latest release in the
 following link: `InfantiumSDK`_.
 
-.. _dependencies:
-
 Dependencies
 ---------------------------
 
 This SDK requires the *LoopJ Asynchronous HTTP Library v1.4.3* to be included in the project for proper functioning. You
- can download it from `our servers`_ or from `LoopJ's github repo`_ .
+can download it from `our servers`_ or from `LoopJ's github repo`_ .
 
 
 .. _InfantiumSDK: https://www.dropbox.com/s/90pu6qq47jpo8la/InfantiumSDK_debug.jar
