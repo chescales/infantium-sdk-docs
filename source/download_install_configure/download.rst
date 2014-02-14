@@ -5,6 +5,8 @@ Download
 The Infantium SDK is provided as a *jar* container, that is, as a Java library. You can find the latest release in the
 following link: `InfantiumSDK`_.
 
+.. _dependencies:
+
 Dependencies
 ---------------------------
 
