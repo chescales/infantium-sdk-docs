@@ -9,6 +9,6 @@ Here you can see the walkthroughs for creating and sending e-book and game *RawD
 .. toctree::
     :maxdepth: 1
 
-    getting_started/activity_cycle.rest
+    getting_started/activity_cycle.rst
     getting_started/ebook_walkthrough.rst
     getting_started/game_walkthrough.rst

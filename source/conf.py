@@ -103,8 +103,14 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_theme = 'flask'
-# html_theme = 'bootstrap'
+# on_rtd is whether we are on readthedocs.org
+import os
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+if not on_rtd:  # only import and set the theme if we're building docs locally
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -169,7 +175,7 @@ html_short_title = 'Infantium Docs'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = "_static/logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -307,5 +313,9 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 # A string of reStructuredText that will be included at the end of every source file that is read.
 # This is the right place to add substitutions that should be available in every file.
 rst_epilog = """
+Date: |today|
+Version: %s
+
 .. |version| replace:: %s
-""" % version
+""" % (version,
+       version)

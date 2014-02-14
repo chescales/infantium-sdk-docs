@@ -12,12 +12,6 @@
 Introduction
 ===========================
 
-Dependencies
----------------------------
-
-This SDK requires the library LoopJ v1.4.3 to be included in the project for proper functioning. You can find it in the following link:
-`LoopJ Library 1.4.3`_
-
 Android Permissions
 ---------------------------
 

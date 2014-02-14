@@ -2,14 +2,11 @@
 Downloading, installing and configuring the SDK
 ===============================================
 
-Infantium Android SDK, current version |version|, allows Developers to contact with the Infantium API more easily.
+Welcome to the set-up area of the Dev Center, in the following sections we will explain in detail how to download,
+install, and configure the Infantium SDK.
 
-Here you can see the walkthroughs for creating and sending e-book and game *RawData* to the API of Infantium.
+.. include:: download_install_configure/download.rst
 
-.. toctree::
-    :maxdepth: 1
+.. include:: download_install_configure/install.rst
 
-    download_install_configure/download.rst
-    download_install_configure/install.rst
-    download_install_configure/configure.rst
-    download_install_configure/check_installation.rst
+.. include:: download_install_configure/configure.rst
