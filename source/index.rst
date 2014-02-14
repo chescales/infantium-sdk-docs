@@ -15,6 +15,7 @@ Contents:
    :maxdepth: 3
 
    walkthroughs.rst
+   adding_infantium_button.rst
 
 .. Indices and tables
    ==================

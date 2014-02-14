@@ -1,5 +1,6 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,17 +9,13 @@
     
     <title>Walkthrough: E-Book &mdash; Infantium Developers Documentation</title>
     
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-2.3.2/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/journal/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-2.3.2/css/bootstrap-responsive.min.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '',
+        VERSION:     '1.5.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,10 +24,6 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-2.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="top" title="Infantium Developers Documentation" href="../index.html" />
     <link rel="up" title="Android Walkthroughs" href="../walkthroughs.html" />
@@ -42,6 +35,22 @@
 
   </head>
   <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="game_walkthrough.html" title="Walkthrough: Game"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../walkthroughs.html" title="Android Walkthroughs"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Infantium Docs</a> &raquo;</li>
+          <li><a href="../walkthroughs.html" accesskey="U">Android Walkthroughs</a> &raquo;</li> 
+      </ul>
+    </div>
 <script>
     $('body').addClass('preview');
     $('body').attr("id","top");
@@ -50,7 +59,7 @@
     $('body').css("margin-top","40px");
 </script>
 
-    <div id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <div id="navbar" class=" ">
          <div class="navbar-inner">
             <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
             <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -60,29 +69,30 @@
             </button>
 
             <a class="brand" href="../index.html">Infantium Dev Center</a>
-            <span class="navbar-text pull-left"><b>v.&nbsp;2.0</b></span>
+            <span class="navbar-text pull-left"><b>v.&nbsp;1.5</b></span>
 
             <div class="nav-collapse">
                 <ul class="nav">
                     <li class="divider-vertical"></li>
                     
-                        <li class="dropdown globaltoc-container">
-  <a href="../index.html"
-     class="dropdown-toggle"
-     data-toggle="dropdown">Site <b class="caret"></b></a>
-  <ul class="dropdown-menu globaltoc"
-    ><ul class="current">
+                        
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../walkthroughs.html">Android Walkthroughs</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Walkthrough: E-Book</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Walkthrough: E-Book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#walkthrough">Walkthrough</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="game_walkthrough.html">Walkthrough: Game</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../adding_infantium_button.html">Adding the Infantium Button</a></li>
 </ul>
-</ul>
-</li>
-                        <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"><ul>
+
+                        
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
 <li><a class="reference internal" href="#">Walkthrough: E-Book</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
@@ -105,15 +115,16 @@
 </ul>
 </li>
 </ul>
-</ul>
-</li>
+
                     
                     
                         
-  <li><a href="../walkthroughs.html"
-         title="Previous Chapter: Android Walkthroughs">&laquo; Android Walkthro...</a></li>
-  <li><a href="game_walkthrough.html"
-         title="Next Chapter: Walkthrough: Game">Walkthrough: Gam... &raquo;</a></li>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../walkthroughs.html"
+                        title="previous chapter">Android Walkthroughs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="game_walkthrough.html"
+                        title="next chapter">Walkthrough: Game</a></p>
                     
                     
                 </ul>
@@ -189,13 +200,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Infantium &lt;www.infantium.com&gt;</td>
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">February 14, 2014</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">$Date: 2013-09-20 01:10:53 +0000 (Wed, 20 Sep 2013) $</td>
+<tr class="field-even field"><th class="field-name">Revision:</th><td class="field-body">1.5.0.0</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Revision:</th><td class="field-body">$Revision: 1 $</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Description:</th><td class="field-body">This tutorial show how to send an e-book rawdata, detailing the different required functions with its parameters.</td>
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">This tutorial show how to send an e-book rawdata, detailing the different required functions with its parameters.</td>
 </tr>
 </tbody>
 </table>
@@ -416,22 +425,25 @@ objects in the screen), the function <a class="reference external" href="http://
 
 </div>
 <div class="clearfix" >&nbsp;</div>
-<footer class="footer">
-  <div class="container">
-    <p class="pull-right">
-      <a href="#">Back to top</a>
-      
-        <br/>
-        
-  <a href="../_sources/walkthroughs/ebook_walkthrough.txt"
-     rel="nofollow">Source</a>
-      
-    </p>
-    <p>
-        &copy; Copyright 2013, Infantium S.L. Barcelona, Spain..<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b1.<br/>
-    </p>
-  </div>
-</footer>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="game_walkthrough.html" title="Walkthrough: Game"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../walkthroughs.html" title="Android Walkthroughs"
+             >previous</a> |</li>
+        <li><a href="../index.html">Infantium Docs</a> &raquo;</li>
+          <li><a href="../walkthroughs.html" >Android Walkthroughs</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Infantium S.L. Barcelona, Spain.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
   </body>
 </html>

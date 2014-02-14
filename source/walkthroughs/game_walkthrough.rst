@@ -5,7 +5,7 @@
 =====================================================
 
 :Date: |today|
-:Version: |version|
+:Version: |release|
 :Description: This tutorial shows how to send a game rawdata, detailing the different required functions with its
     parameters.
 
