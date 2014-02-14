@@ -4,9 +4,8 @@
  Walkthrough: E-Book
 =====================================================
 
-:Author: Infantium <www.infantium.com>
-:Date: $Date: 2013-09-20 01:10:53 +0000 (Wed, 20 Sep 2013) $
-:Revision: $Revision: 1 $
+:Date: |today|
+:Revision: |release|
 :Description: This tutorial show how to send an e-book rawdata, detailing the different required functions with its parameters.
 
 Introduction
