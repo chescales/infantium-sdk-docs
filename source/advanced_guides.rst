@@ -10,3 +10,4 @@ Here you can see the walkthroughs for creating and sending e-book and game *RawD
     :maxdepth: 1
 
     advanced_guides/elements.rst
+    advanced_guides/adding_infantium_button.rst
