@@ -115,16 +115,17 @@ When we have set the *contentapp_uuid* we can create a *Gameplay* with: `createG
 
 The *GamePlay* is created once everytime the kid starts a game session. Now, for every activity played during that time,
 a *RawData* object is sent, which will contain the information we need to analyze. This contains, among other generic
-stats, the elements in the screen, the actions the kid performs, and some info about the results.
+stats, the elements in the screen and the goals to achieve, and finally the actions the kid performs.
 
 When the kid enters one of the activities of the game (i.e. starts playing the game), the *RawData* is filled in three
 phases:
 
 1. Register the elements in the screen.
 
- This is done adding the `Elements`_ in the screen (`addElement(Element element)`_).
+ This is done adding the `Elements`_ in the screen (`addElement(Element element)`_) and the `Goals`_ the kid has to
+ complete to succeed in this game (`addGoal(Goal goal)`_).
 
- An example element could be:
+ An example *Element* could be:
 
  .. code-block:: java
 
@@ -141,8 +142,17 @@ phases:
     infantium.addElement(number_three);
 
     // Add a text element
-    TextElement sentence_element = new TextElement("en-US", "This little puppy wants to play with the ball! Can you help him?");
+    TextElement sentence_element = new TextElement("en-US",
+        "This little puppy wants to play with the ball! Can you help him?");
     infantium.addElement(sentence_element);
+
+ An example *Goal* could be:
+
+ .. code-block:: java
+
+    // The Goal is to move the ball to the dog
+    Goal g = new Goal("drag_the_ball", "selection");
+    infantium.addGoal(g);
 
 
 2. Start the timers and register the actions of the kid.
@@ -152,29 +162,20 @@ phases:
  show up, which will allow us to get a lot of statistics about the child's development, relieving the developer of
  that task.
 
- For each time the kid interacts with the screen, this can be registered with the `tapOnObjects(String element_id)`_ method.
- In this method, it must be pointed out if the interaction represents a *success*, an *error* or *none* of both. Here
- is an example for the previous *dog* with its sound:
+ For each time the kid interacts with the screen, this can be registered with the
+ `newBasicInteraction(String t, String object_type, String goal_type)`_ method.
+ In this method, the *t* equals to the type of the interaction, which can be *"success"*, *"failure"*, *"none"* or some others
+ explained in the *BasicInteraction* section.
 
  .. code-block:: java
 
-    // Tapping the dog is the goal of the activity, and thus is represented a "success". When the dog is tapped,
-    //  the "barking" sound is triggered.
-    infantium.tapOnObjects("dog_figure", "success", "barking");
+    // Dragging the ball to the dog is the goal of the activity,
+    //  and thus it is represented a "success".
+    InfantiumResponse res = infantium.newBasicInteraction("success", "ball", "drag_the_ball");
 
-    // Another example, if the kid taps on the "cat_figure" element, but was not the goal of this activity.
-    infantium.tapOnObjects("cat_figure", "error", "error_sound");
-
-3. Add some general info about the scores.
-
- When the kid has completed the activity, some conclusions about the activity are registered. This is done with the
- `setSuccesses(int successes)`_ and `setFailures(int failures)`_ methods.
-
- .. code-block:: java
-
-    // Finally one "success" and one "failure"
-    infantium.setSuccesses(1);
-    infantium.setFailures(1);
+    // Another example, if the kid drags the "smartphone" element,
+    //  but was not the goal of this activity.
+    infantium.tapOnObjects("error", "smartphone", "drag_the_ball");
 
 
 5. Send Game Rawdata:
@@ -199,52 +200,38 @@ create new ones.
 7. Conclusions
 ---------------
 
-And with this
+And with this the full cycle for sending data is complete. The integration can be enriched with many more methods and
+variables, but we hope this gave you an insight of the process to integrate your app with Infantium!
+
+Now you can refer to the :ref:`advanced-guides` section for more info.
 
 .. _INTERNET: http://developer.android.com/reference/android/Manifest.permission.html#INTERNET
 .. _ACCESS_NETWORK_STATE: http://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE
 .. _LoopJ Library 1.4.3: https://www.dropbox.com/s/sclmax88prirgk0/android-async-http-1.4.3.jar
 
-.. _setDeviceInfo(w_dev, h_dev): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeviceInfo(int,%20int)
-.. _onFailureCloseGameplay(String description): http://android.sdk.infantium.com/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onFailureCloseGameplay(java.lang.String)
-.. _onSuccessCloseGameplay(): http://android.sdk.infantium.com/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onSuccessCloseGameplay()
-.. _getInfantium_SDK(Context context): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#getInfantium_SDK(android.content.Context)
-.. _setDeveloperCredentials(String api_user, String api_key): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperCredentials(java.lang.String,%20java.lang.String)
-.. _setDeveloperHandler(InfantiumAsyncResponseHandler handler): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperHandler(com.infantium.android.sdk.InfantiumAsyncResponseHandler)
-.. _setContentAppUUID(String contentapp_uuid): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setContentAppUUID(java.lang.String)
-.. _createGameplay(String subcontent_uuid): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#createGameplay(java.lang.String)
-.. _startPlaying(): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#startPlaying()
+.. _setDeviceInfo(w_dev, h_dev): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeviceInfo(int,%20int)
+.. _onFailureCloseGameplay(String description): ../_static/javadocs/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onFailureCloseGameplay(java.lang.String)
+.. _onSuccessCloseGameplay(): ../_static/javadocs/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onSuccessCloseGameplay()
+.. _getInfantium_SDK(Context context): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#getInfantium_SDK(android.content.Context)
+.. _setDeveloperCredentials(String api_user, String api_key): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperCredentials(java.lang.String,%20java.lang.String)
+.. _setDeveloperHandler(InfantiumAsyncResponseHandler handler): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperHandler(com.infantium.android.sdk.InfantiumAsyncResponseHandler)
+.. _setContentAppUUID(String contentapp_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setContentAppUUID(java.lang.String)
+.. _createGameplay(String subcontent_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#createGameplay(java.lang.String)
+.. _startPlaying(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#startPlaying()
 
-.. _Elements: http://android.sdk.infantium.com/com/infantium/android/sdk/Element.html
-.. _Sounds: http://android.sdk.infantium.com/com/infantium/android/sdk/Sound.html
+.. _Elements: ../_static/javadocs/com/infantium/android/sdk/Element.html
+.. _Goals: ../_static/javadocs/com/infantium/android/sdk/Goal.html
 
-.. _addElement(Element element): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addElement(com.infantium.android.sdk.Element)
-.. _addElements(List<Element> elements): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addElements(java.util.List)
-.. _tapNoObjects(List<Integer> position): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#tapNoObjects(java.util.List)
-.. _tapNoObjects(List<Integer> position, String sound_id): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#tapNoObjects(java.util.List,%20java.lang.String)
-.. _tapOnObjects(String element_id): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#tapOnObjects(java.lang.String)
-.. _tapOnObjects(String element_id, String sound_id): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#tapOnObjects(java.lang.String,%20java.lang.String)
-.. _setSuccesses(int successes): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setSuccesses(int)
-.. _setFailures(int failures): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setFailures(int)
+.. _addElement(Element element): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addElement(com.infantium.android.sdk.Element)
+.. _addElements(List<Element> elements): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addElements(java.util.List)
+.. _addGoal(Goal goal): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addGoal(com.infantium.android.sdk.Goal)
 
-.. _setTarget(Target target): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setTarget(com.infantium.android.sdk.Target)
-.. _setTargets(List<Target> targets): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setTargets(java.util.List)
-.. _setEvaluate(List<String> eval): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setEvaluate(java.util.List)
-.. _addSound(Sound sound): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addSound(com.infantium.android.sdk.Sound)
-.. _addSounds(List<Sound> sounds): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addSounds(java.util.List)
-.. _addFixedAnimation(Animation animation): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addFixedAnimation(com.infantium.android.sdk.Animation)
-.. _addFixedAnimations(List<Animation> animations): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addFixedAnimations(java.util.List)
-.. _addDynamicField(DynamicField d_field): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addDynamicField(com.infantium.android.sdk.DynamicField)
-.. _addDynamicFields(List<DynamicField> d_fields): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#addDynamicFields(java.util.List)
-.. _startAnimation(String element_id, List<Integer> st_pos, String type): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#startAnimation(java.lang.String,%20java.util.List,%20java.lang.String)
-.. _endAnimation(String element_id): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#endAnimation(java.lang.String)
-.. _endAnimation(String element_id, List<Integer> end_pos): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#endAnimation(java.lang.String,%20java.util.List)
-.. _endAnimation(String element_id, String sound_id, List<Integer> end_pos): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#endAnimation(java.lang.String,%20java.lang.String,%20java.util.List)
-.. _startDragging(String element_id, List<Integer> position): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#startDragging(java.lang.String,%20java.util.List)
-.. _finishDragging(List<Integer> position): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#finishDragging(java.util.List)
-.. _finishDragging(List<Integer> position, int max_x, int max_y): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#finishDragging(java.util.List,%20int,%20int)
-.. _finishDragging(List<Integer> position, String sound_id): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#finishDragging(java.util.List,%20java.lang.String)
-.. _finishDragging(List<Integer> position, String sound_id, int max_x, int max_y): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#finishDragging(java.util.List,%20java.lang.String,%20int,%20int)
+.. _addDynamicField(DynamicField d_field): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addDynamicField(com.infantium.android.sdk.DynamicField)
+.. _addDynamicFields(List<DynamicField> d_fields): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addDynamicFields(java.util.List)
 
-.. _sendGameRawData(): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#sendGameRawData()
-.. _closeGameplay(): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#closeGameplay()
+.. _newBasicInteraction(String t, String object_type, String goal_type): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#newBasicInteraction(java.lang.String,%20java.lang.String,%20java.lang.String)
+
+.. _sendGameRawData(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#sendGameRawData()
+.. _closeGameplay(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#closeGameplay()
+
+.. _Advanced Guides: advanced-guides

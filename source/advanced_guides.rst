@@ -1,10 +1,10 @@
+.. _advanced-guides:
+
 ======================
 Advanced Guides
 ======================
 
-Infantium Android SDK, current version |version|, allows Developers to contact with the Infantium API more easily.
-
-Here you can see the walkthroughs for creating and sending e-book and game *RawData* to the API of Infantium.
+Feel free to browse this section for learning advanced tricks when interacting with the SDK!
 
 .. toctree::
     :maxdepth: 1
