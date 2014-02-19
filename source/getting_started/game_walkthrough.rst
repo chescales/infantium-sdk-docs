@@ -122,49 +122,37 @@ phases:
 
 1. Register the elements in the screen.
 
- This is done adding the `Elements`_ in the screen (`addElement(Element element)`_) and the `Sounds`_ if there are any
- (`addSound(Sound sound)`_).
+ This is done adding the `Elements`_ in the screen (`addElement(Element element)`_).
 
- An example element and sound could be:
+ An example element could be:
 
  .. code-block:: java
 
-    // Add an element for a dog drawing
-    List<Integer> size = Arrays.asList(10, 10);
-    List<Integer> pos = Arrays.asList(20, 20);
-    Element dog_element = new Element(
-        "dog_figure",
-        size,
-        "[0,255,0]",
-        "animal",
-        "dog",
-        pos
-    );
+    // Add an element for a dog
+    PaintedElement dog_element = new PaintedElement("dog_figure");
     infantium.addElement(dog_element);
 
-    // Add the sound the dog makes when it is tapped
-    Sound dog_sound = new Sound(
-        "barking"
-    );
-    infantium.addSound(dog_sound);
+    // A ball
+    PaintedElement ball_element = new PaintedElement("ball");
+    infantium.addElement(ball_element);
 
- Once registered, it is very important to point out the elements to evaluate on the screen (there may be different
- elements, but only a few important for the activity):
+    // Add a number element
+    NumberElement number_three = new NumberElement(3);
+    infantium.addElement(number_three);
 
- .. code-block:: java
+    // Add a text element
+    TextElement sentence_element = new TextElement("en-US", "This little puppy wants to play with the ball! Can you help him?");
+    infantium.addElement(sentence_element);
 
-    // Add an element for a dog drawing
-    List<String> evaluate = Arrays.asList("dog_figure");
-    infantium.setEvaluate(evaluate);
 
 2. Start the timers and register the actions of the kid.
 
  When the kid starts interacting with the screen, we will call the `startPlaying()`_ method. This will trigger the
  timers inside the SDK. The SDK will automatically handle the timestamps when the kid taps the screen and the elements
- show up, which will allow us to get a lot of statistics about the child's development, with no effort at all on the
- developer side.
+ show up, which will allow us to get a lot of statistics about the child's development, relieving the developer of
+ that task.
 
- For each time the kid taps on the screen, this will be registered with the `tapOnObjects(String element_id)`_ method.
+ For each time the kid interacts with the screen, this can be registered with the `tapOnObjects(String element_id)`_ method.
  In this method, it must be pointed out if the interaction represents a *success*, an *error* or *none* of both. Here
  is an example for the previous *dog* with its sound:
 

@@ -217,7 +217,7 @@ And with this
 .. _ACCESS_NETWORK_STATE: http://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE
 .. _LoopJ Library 1.4.3: https://www.dropbox.com/s/sclmax88prirgk0/android-async-http-1.4.3.jar
 
-.. _setDeviceInfo(w_dev, h_dev): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#setDeviceInfo(int,%20int)
+.. _setDeviceInfo(w_dev, h_dev): /_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeviceInfo(int,%20int)
 .. _onFailureCloseGameplay(String description): http://android.sdk.infantium.com/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onFailureCloseGameplay(java.lang.String)
 .. _onSuccessCloseGameplay(): http://android.sdk.infantium.com/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onSuccessCloseGameplay()
 .. _getInfantium_SDK(Context context): http://android.sdk.infantium.com/com/infantium/android/sdk/Infantium_SDK.html#getInfantium_SDK(android.content.Context)
