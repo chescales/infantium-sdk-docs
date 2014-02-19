@@ -9,3 +9,4 @@ pip-log.txt
 .project
 .vagrant
 Vagrantfile
+/build

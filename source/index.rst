@@ -34,6 +34,7 @@ Contents:
    advanced_guides.rst
    class_reference.rst
    plugins.rst
+   javadocs.rst
 
 .. Indices and tables
    ==================

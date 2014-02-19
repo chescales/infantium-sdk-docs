@@ -34,7 +34,7 @@ calling the function: `getInfantium_SDK(Context context)`_. The SDK requires the
 
 .. topic:: Example:
 
- Infantium_SDK infantium = Infantium_SDK.getInfantium_SDK(this.getBaseContext());
+ InfantiumSDK infantium = InfantiumSDK.getInfantiumSDK(this.getBaseContext());
 
 
 The Handler
