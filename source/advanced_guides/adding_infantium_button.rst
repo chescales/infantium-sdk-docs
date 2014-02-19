@@ -2,16 +2,12 @@
  Adding the Infantium Button
 =====================================================
 
-:Date: |today|
-:Revision: |release|
-:Description: This section shows how to add the Infantium Button to your App.
-
 Downloading
 ===============
 
 The button graphics may be downloaded from `the following link`_. Here is an example of the button:
 
-.. image:: _static/return_button_infantium.png
+.. image:: /_static/return_button_infantium.png
 
 Positioning
 ===============
