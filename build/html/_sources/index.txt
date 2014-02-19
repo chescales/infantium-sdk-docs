@@ -16,6 +16,7 @@ Contents:
 
    walkthroughs.rst
    adding_infantium_button.rst
+   javadocs.rst
 
 .. Indices and tables
    ==================
