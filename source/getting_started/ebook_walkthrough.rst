@@ -31,7 +31,7 @@ Singleton Pattern
 Infantium_SDK has been created using a Singleton pattern, so the only way to get an instance of the class is by
 calling the function: `getInfantium_SDK(Context context)`_. The SDK requires the *Context* of the Android Activity.
 
-.. topic:: Example:
+.. code-block:: java
 
  InfantiumSDK infantium = InfantiumSDK.getInfantiumSDK(this.getBaseContext());
 
