@@ -136,63 +136,107 @@ Possible responses:
 5. Create Gameplay:
 ----------------------------------------------
 
-When we have set the *contentapp_uuid*, *content_uuid* and the *player_uuid* we can create a gameplay.
+When we have set the *contentapp_uuid* and the *content_uuid* we can create a *Gameplay* with: `createGameplay()`_.
 
-.. topic:: Function:
+.. code-block:: java
 
- `createGameplay()`_
-
-.. NOTE:: the createGameplay(String subcontent_uuid, handler) is only used to create gameplays of games.
-
-Possible responses:
-
- - *onSuccessCreateGameplay()*: The gameplay is created successfully.
- - *onFailureCreateGameplay(String description)*: If the player is not selected, the content is not informed or there is another gameplay opened
+   // Create the Gameplay
+   infantium.createGameplay();
 
 6. Rawdata Functions:
 -------------------------------------
 
-Once the gameplay is created, we can call the rawdata functions to introduce elements or sounds. Additionally, when the ebook page is shown (the kid can see the
-objects in the screen), the function `startPlaying()`_ should be called. If any new elements, sounds or animations are displayed they can be added afterwards.
+The *GamePlay* is created once every time the kid starts a reading session. Now, for every activity played or page
+turned during that time, a *RawData* object is sent, which will contain the information we need to analyze. This contains,
+among other generic stats, the elements in the screen and the goals to achieve, and finally the actions the kid performs.
 
- - Required rawdata functions:
+When the kid enters one of the activities of the ebook (i.e. starts reading the ebook), the *RawData* is filled in three
+phases:
 
-  - `addElement(Element element)`_
-  - `addElements(List<Element> elements)`_
-  - `addDynamicField(DynamicField d_field)`_
-  - `addDynamicFields(List<DynamicField> d_fields)`_
+1. Register the elements in the screen.
+
+ This is done adding the `Elements`_ in the screen (`addElement(Element element)`_) and the `Goals`_ the kid has to
+ complete to succeed in this game (`addGoal(Goal goal)`_).
+
+ An example *Element* could be:
+
+ .. code-block:: java
+
+    // Add an element for a dog
+    PaintedElement dog_element = new PaintedElement("dog_figure");
+    infantium.addElement(dog_element);
+
+    // A ball
+    PaintedElement ball_element = new PaintedElement("ball");
+    infantium.addElement(ball_element);
+
+    // Add a number element
+    NumberElement number_three = new NumberElement(3);
+    infantium.addElement(number_three);
+
+    // Add a text element
+    TextElement sentence_element = new TextElement("en-US",
+        "This little puppy wants to play with the ball! Can you help him?");
+    infantium.addElement(sentence_element);
+
+ An example *Goal* could be:
+
+ .. code-block:: java
+
+    // The Goal is to move the ball to the dog
+    Goal g = new Goal("drag_the_ball", "selection");
+    infantium.addGoal(g);
+
+
+2. Start the timers and register the actions of the kid.
+
+ When the kid starts interacting with the screen, we will call the `startPlaying()`_ method. This will trigger the
+ timers inside the SDK. The SDK will automatically handle the timestamps when the kid taps the screen and the elements
+ show up, which will allow us to get a lot of statistics about the child's development, relieving the developer of
+ that task.
+
+ For each time the kid interacts with the screen, this can be registered with the
+ `newBasicInteraction(String t, String object_type, String goal_type)`_ method.
+ In this method, the *t* equals to the type of the interaction, which can be *"success"*, *"failure"*, *"none"* or some others
+ explained in the *BasicInteraction* section.
+
+ .. code-block:: java
+
+    // Dragging the ball to the dog is the goal of the activity,
+    //  and thus it is represented a "success".
+    InfantiumResponse res = infantium.newBasicInteraction("success", "ball", "drag_the_ball");
+
+    // Another example, if the kid drags the "smartphone" element,
+    //  but was not the goal of this activity.
+    infantium.tapOnObjects("error", "smartphone", "drag_the_ball");
 
 7. Send Ebook Rawdata:
 ------------------------------
 
+We finally call `sendEbookRawData(int numPage, boolean text, boolean readToMe)`_ when we want to send the *RawData*.
+After sending the data, and the kid starts a new activity/page, the flow would go again to the 4th step!
+If the kid goes back to the main menu, proceed to step 6.
+
+.. code-block:: java
+
+    // Send the previously introduced data
+    infantium.sendEbookRawData(1, true, false);
+
 We finally call this function when we want to send the rawdata.
-
-.. topic:: Function:
-
- `sendEbookRawData(int numPage, boolean text, boolean readToMe, final InfantiumAsyncResponseHandler responseHandler)`_
-		
-- numPage: The number of the page in the e-book.
-- text - true if the page contains text or false if not.
-- readToMe - true if the book reads to the player or false if not.
-
-Possible responses:
-
- - *onSuccessEbookRawdata()*: The ebook rawdata is posted successfully.
- - *onFailureEbookRawdata(String description)*: A problem occurred when sending the ebook rawdata.
 
 8. Close Gameplay
 ------------------------------
 
-Last step but not least important. If the gameplay is not closed, the SDK will not be able to create new Gameplays.
+Last step but not least important: `closeGameplay()`_. If the *GamePlay* is not closed, the SDK will not be able to
+create new ones.
 
-.. topic:: Function:
+7. Conclusions
+---------------
 
- `closeGameplay(InfantiumAsyncResponseHandler handler)`_
+And with this the full cycle for sending data is complete. The integration can be enriched with many more methods and
+variables, but we hope this gave you an insight of the process to integrate your ebooks with Infantium!
 
-Possible responses:
-
- - *onSuccessCloseGameplay()*: Gameplay closed succesfully.
- - *onFailureCloseGameplay(String description)*: If the gameplay is not started or another problem occurs when closing the gameplay.
+Now you can refer to the :ref:`advanced-guides` section for more info.
 
 .. _INTERNET: http://developer.android.com/reference/android/Manifest.permission.html#INTERNET
 .. _ACCESS_NETWORK_STATE: http://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE
@@ -221,6 +265,6 @@ Possible responses:
 
 .. _newBasicInteraction(String t, String object_type, String goal_type): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#newBasicInteraction(java.lang.String,%20java.lang.String,%20java.lang.String)
 
-.. _sendGameRawData(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#sendGameRawData()
+.. _sendEbookRawData(int numPage, boolean text, boolean readToMe): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#sendEbookRawData(int,%20boolean,%20boolean)
 .. _closeGameplay(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#closeGameplay()
 

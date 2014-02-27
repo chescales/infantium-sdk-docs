@@ -106,14 +106,14 @@ When we have set the *contentapp_uuid* we can create a *Gameplay* with: `createG
 
 .. code-block:: java
 
-   // Send the previously introduced data
+   // Create the Gameplay with the SubContent UUID
    infantium.createGameplay(subcontent_uuid);
 
  
 4. Rawdata Functions:
 -------------------------------------
 
-The *GamePlay* is created once everytime the kid starts a game session. Now, for every activity played during that time,
+The *GamePlay* is created once every time the kid starts a game session. Now, for every activity played during that time,
 a *RawData* object is sent, which will contain the information we need to analyze. This contains, among other generic
 stats, the elements in the screen and the goals to achieve, and finally the actions the kid performs.
 
