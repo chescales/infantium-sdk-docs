@@ -10,6 +10,6 @@ Here you can see the walkthroughs for creating and sending e-book and game *RawD
     :maxdepth: 1
 
     getting_started/game_walkthrough.rst
+    getting_started/ebook_walkthrough.rst
 
 .. getting_started/activity_cycle.rst
-   getting_started/ebook_walkthrough.rst

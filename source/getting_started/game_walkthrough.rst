@@ -175,7 +175,7 @@ phases:
 
     // Another example, if the kid drags the "smartphone" element,
     //  but was not the goal of this activity.
-    infantium.tapOnObjects("error", "smartphone", "drag_the_ball");
+    infantium.newBasicInteraction("error", "smartphone", "drag_the_ball");
 
 
 5. Send Game Rawdata:
