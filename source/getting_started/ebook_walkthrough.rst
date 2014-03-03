@@ -5,7 +5,7 @@
 =====================================================
 
 :Date: |today|
-:Revision: |release|
+:Revision: |version|
 :Description: This tutorial show how to send an e-book rawdata, detailing the different required functions with its parameters.
 
 Introduction

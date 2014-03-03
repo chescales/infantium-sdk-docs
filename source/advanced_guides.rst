@@ -10,4 +10,5 @@ Feel free to browse this section for learning advanced tricks when interacting w
     :maxdepth: 1
 
     advanced_guides/elements.rst
+    advanced_guides/goals.rst
     advanced_guides/adding_infantium_button.rst
