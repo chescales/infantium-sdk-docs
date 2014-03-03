@@ -163,6 +163,8 @@ phases:
     Goal g = new Goal("drag_the_ball", "selection");
     infantium.addGoal(g);
 
+ Please refer to the advanced guides for :ref:`advanced-elements` and :ref:`advanced-goals` for more detailed
+ information.
 
 2. Start the timers and register the actions of the kid.
 

@@ -15,7 +15,7 @@ Including our SDK in your project will provide you with a whole set of tools to 
 developers with a dashboard of usage statistics, and many more features to come, like in-game cognitive adaptivity!
 
 The SDK is programmed in native Android/Java, but is also deployed in other frameworks through a ever increasing set
-of different plugins. Check the :ref:`plugins<Plugins>` page to check if your framework has already been adapted! Otherwise, don't
+of different plugins. Check the :ref:`Plugins<plugins>` page to check if your framework has already been adapted! Otherwise, don't
 get discouraged! Contact us and we will be more than happy to give you assistance to create a new plugin in any
 framework you might use.
 

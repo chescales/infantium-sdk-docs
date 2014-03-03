@@ -154,6 +154,8 @@ phases:
     Goal g = new Goal("drag_the_ball", "selection");
     infantium.addGoal(g);
 
+ Please refer to the advanced guides for :ref:`advanced-elements` and :ref:`advanced-goals` for more detailed
+ information.
 
 2. Start the timers and register the actions of the kid.
 
@@ -168,6 +170,9 @@ phases:
  explained in the *BasicInteraction* section.
 
  .. code-block:: java
+
+    // Start the timers
+    infantium.startPlaying();
 
     // Dragging the ball to the dog is the goal of the activity,
     //  and thus it is represented a "success".
