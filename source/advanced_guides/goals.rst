@@ -134,7 +134,7 @@ generic Goal should be enough to describe the nature of the activity. For instan
 
 .. image:: /_static/game_screens/TutoToons_generic_goal_example.png
 
-The previous activity could be defined with the default *Goal* class:
+This activity could be defined with the default *Goal* class:
 
 .. code-block:: java
 

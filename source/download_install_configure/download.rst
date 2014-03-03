@@ -2,8 +2,7 @@
 Download
 ===============
 
-The Infantium SDK is provided as a *jar* container, that is, as a Java library. You can find the latest release in the
-following link: `InfantiumSDK`_.
+The Infantium SDK is provided as a *jar* container, that is, as a Java library. `Contact us`_ to get the latest release!
 
 .. _dependencies:
 
@@ -14,6 +13,6 @@ This SDK requires the *LoopJ Asynchronous HTTP Library v1.4.3* to be included in
 can download it from `our servers`_ or from `LoopJ's github repo`_ .
 
 
-.. _InfantiumSDK: https://www.dropbox.com/s/90pu6qq47jpo8la/InfantiumSDK_debug.jar
+.. _Contact us: hello@infantium.com
 .. _our servers: https://www.dropbox.com/s/sclmax88prirgk0/android-async-http-1.4.3.jar
 .. _LoopJ's github repo: https://github.com/loopj/android-async-http/tree/1.4.3

@@ -7,6 +7,7 @@ install, and configure the Infantium SDK.
 
 .. toctree::
 
-    download_install_configure/download.rst
     download_install_configure/install.rst
-    download_install_configure/configure.rst
+    download_install_configure/download.rst
+
+.. download_install_configure/configure.rst

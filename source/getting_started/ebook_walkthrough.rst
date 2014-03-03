@@ -226,7 +226,7 @@ Now you can refer to the :ref:`advanced-guides` section for more info.
 .. _setDeveloperHandler(InfantiumAsyncResponseHandler handler): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperHandler(com.infantium.android.sdk.InfantiumAsyncResponseHandler)
 .. _setContentAppUUID(String contentapp_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setContentAppUUID(java.lang.String)
 .. _setContentUUID(String content_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setContentUUID(java.lang.String)
-.. _createGameplay(String subcontent_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#createGameplay(java.lang.String)
+.. _createGameplay(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#createGameplay()
 .. _startPlaying(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#startPlaying()
 
 .. _Elements: ../_static/javadocs/com/infantium/android/sdk/Element.html
