@@ -109,31 +109,7 @@ Gameplay.
 
 If the content is not correct, the error will appear when calling the *sendEbookRawdata*.
 
-4. Get Player UUID (from the Infantium App):
-----------------------------------------------
-This function will get the UUID of the selected player in the InfantiumApp to be used by the SDK. This requires to add a few lines in the Android
-Manifest of the App adapting to Infantium. The following receiver should be added to the Manifest:
-
-.. code-block:: xml
-
-    <receiver android:name="com.infantium.android.sdk.ReceivePlayer">
-        <intent-filter>
-            <action android:name="com.infantium.android.sdk.ReceivePlayer"></action>
-        </intent-filter>
-    </receiver>
-
-This receiver should be added inside of the <application> tag of your Manifest. Once this is added, the call to get the Player (and this is the step 3) is:
-
-.. topic:: Function:
-
- `getPlayerUUIDFromApp()`_
-
-Possible responses:
-
- - *onSuccessGetPlayerByUUID()*: Player was successfully obtained, you can now proceed to the next step.
- - *onFailureGetPlayerByUUID(String description)*: A problem occurred while obtaining the player, check the description for more details.
-
-5. Create Gameplay:
+4. Create Gameplay:
 ----------------------------------------------
 
 When we have set the *contentapp_uuid* and the *content_uuid* we can create a *Gameplay* with: `createGameplay()`_.
@@ -143,7 +119,7 @@ When we have set the *contentapp_uuid* and the *content_uuid* we can create a *G
    // Create the Gameplay
    infantium.createGameplay();
 
-6. Rawdata Functions:
+5. Rawdata Functions:
 -------------------------------------
 
 The *GamePlay* is created once every time the kid starts a reading session. Now, for every activity played or page
@@ -210,7 +186,7 @@ phases:
     //  but was not the goal of this activity.
     infantium.newBasicInteraction("error", "smartphone", "drag_the_ball");
 
-7. Send Ebook Rawdata:
+6. Send Ebook Rawdata:
 ------------------------------
 
 We finally call `sendEbookRawData(int numPage, boolean text, boolean readToMe)`_ when we want to send the *RawData*.
@@ -224,13 +200,13 @@ If the kid goes back to the main menu, proceed to step 6.
 
 We finally call this function when we want to send the rawdata.
 
-8. Close Gameplay
+7. Close Gameplay
 ------------------------------
 
 Last step but not least important: `closeGameplay()`_. If the *GamePlay* is not closed, the SDK will not be able to
 create new ones.
 
-7. Conclusions
+8. Conclusions
 ---------------
 
 And with this the full cycle for sending data is complete. The integration can be enriched with many more methods and
