@@ -29,8 +29,8 @@ The present SDK requires the following Android Permissions in the App manifest:
 Singleton Pattern
 ---------------------------
 
-Infantium_SDK has been created using a Singleton pattern, so the only way to get an instance of the class is by
-calling the function: `getInfantium_SDK(Context context)`_. The SDK requires the *Context* of the Android Activity.
+InfantiumSDK has been created using a Singleton pattern, so the only way to get an instance of the class is by
+calling the function: `getInfantiumSDK(Context context)`_. The SDK requires the *Context* of the Android Activity.
 
 .. code-block:: java
 
