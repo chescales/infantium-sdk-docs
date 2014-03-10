@@ -22,4 +22,4 @@ The function of the SDK to be called is `returnToInfantiumApp()`_ with the curre
 This will open the Infantium App from which your App was called.
 
 .. _the following link: https://www.dropbox.com/s/065uqdqcyg4ohyw/return_button_infantium.png
-.. _returnToInfantiumApp(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#returnToInfantiumApp(android.app.Activity)
+.. _returnToInfantiumApp(): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#returnToInfantiumApp(android.app.Activity)

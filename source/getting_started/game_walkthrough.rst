@@ -214,29 +214,29 @@ Now you can refer to the :ref:`advanced-guides` section for more info.
 .. _ACCESS_NETWORK_STATE: http://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE
 .. _LoopJ Library 1.4.3: https://www.dropbox.com/s/sclmax88prirgk0/android-async-http-1.4.3.jar
 
-.. _setDeviceInfo(w_dev, h_dev): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeviceInfo(int,%20int)
+.. _setDeviceInfo(w_dev, h_dev): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#setDeviceInfo(int,%20int)
 .. _onFailureCloseGameplay(String description): ../_static/javadocs/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onFailureCloseGameplay(java.lang.String)
 .. _onSuccessCloseGameplay(): ../_static/javadocs/com/infantium/android/sdk/InfantiumAsyncResponseHandler.html#onSuccessCloseGameplay()
-.. _getInfantium_SDK(Context context): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#getInfantium_SDK(android.content.Context)
-.. _setDeveloperCredentials(String api_user, String api_key): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperCredentials(java.lang.String,%20java.lang.String)
-.. _setDeveloperHandler(InfantiumAsyncResponseHandler handler): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setDeveloperHandler(com.infantium.android.sdk.InfantiumAsyncResponseHandler)
-.. _setContentAppUUID(String contentapp_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#setContentAppUUID(java.lang.String)
-.. _createGameplay(String subcontent_uuid): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#createGameplay(java.lang.String)
-.. _startPlaying(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#startPlaying()
+.. _getInfantiumSDK(Context context): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#getInfantiumSDK(android.content.Context)
+.. _setDeveloperCredentials(String api_user, String api_key): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#setDeveloperCredentials(java.lang.String,%20java.lang.String)
+.. _setDeveloperHandler(InfantiumAsyncResponseHandler handler): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#setDeveloperHandler(com.infantium.android.sdk.InfantiumAsyncResponseHandler)
+.. _setContentAppUUID(String contentapp_uuid): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#setContentAppUUID(java.lang.String)
+.. _createGameplay(String subcontent_uuid): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#createGameplay(java.lang.String)
+.. _startPlaying(): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#startPlaying()
 
 .. _Elements: ../_static/javadocs/com/infantium/android/sdk/Element.html
 .. _Goals: ../_static/javadocs/com/infantium/android/sdk/Goal.html
 
-.. _addElement(Element element): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addElement(com.infantium.android.sdk.Element)
-.. _addElements(List<Element> elements): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addElements(java.util.List)
-.. _addGoal(Goal goal): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addGoal(com.infantium.android.sdk.Goal)
+.. _addElement(Element element): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#addElement(com.infantium.android.sdk.Element)
+.. _addElements(List<Element> elements): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#addElements(java.util.List)
+.. _addGoal(Goal goal): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#addGoal(com.infantium.android.sdk.Goal)
 
-.. _addDynamicField(DynamicField d_field): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addDynamicField(com.infantium.android.sdk.DynamicField)
-.. _addDynamicFields(List<DynamicField> d_fields): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#addDynamicFields(java.util.List)
+.. _addDynamicField(DynamicField d_field): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#addDynamicField(com.infantium.android.sdk.DynamicField)
+.. _addDynamicFields(List<DynamicField> d_fields): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#addDynamicFields(java.util.List)
 
 .. _newBasicInteraction(String t, String object_type, String goal_type): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#newBasicInteraction(java.lang.String,%20java.lang.String,%20java.lang.String)
 
-.. _sendGameRawData(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#sendGameRawData()
-.. _closeGameplay(): ../_static/javadocs/com/infantium/android/sdk/Infantium_SDK.html#closeGameplay()
+.. _sendGameRawData(): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#sendGameRawData()
+.. _closeGameplay(): ../_static/javadocs/com/infantium/android/sdk/InfantiumSDK.html#closeGameplay()
 
 .. _Advanced Guides: advanced-guides
