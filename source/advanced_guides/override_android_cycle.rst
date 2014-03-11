@@ -1,4 +1,3 @@
-
 Overriding the Android Cycle
 ===================================
 
@@ -16,7 +15,7 @@ code that would achieve this goal:
 .. code-block:: java
 
     @Override
-        protected void onResume() {
+    protected void onResume() {
             super.onResume();
             Log.i("Your-App-Tag", "--- Resumed MainActivity ---");  // Just for example purposes
             infantium.onResumeInfantium();
