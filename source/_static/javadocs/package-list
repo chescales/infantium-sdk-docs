@@ -1,4 +1,5 @@
 com.infantium.android.sdk
+com.infantium.android.sdk.constants
 com.infantium.android.sdk.dynamicfields
 com.infantium.android.sdk.elements
 com.infantium.android.sdk.goals
