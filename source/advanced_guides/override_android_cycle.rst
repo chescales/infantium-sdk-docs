@@ -1,3 +1,5 @@
+.. _android-cycle:
+
 Overriding the Android Cycle
 ===================================
 

@@ -1,3 +1,4 @@
+.. _adding-button:
 
 Adding the Infantium Button
 =====================================================

@@ -7,8 +7,7 @@ In the version 2.3 of the SDK we have introduced the *Events* figure, which will
 different types of events that may happen during the playing time of the kid with their content. The first batch of
 events include two different types, apart from the *generic events*, and those are *Sound Events* and *Missed Opportunities*.
 
-Declaring and Triggering Events
----------------------------------
+**Declaring and Triggering Events**
 
 The *Events* section of the SDK differentiates two steps in the events area: declaring an event once, and triggering
 it as many times as it happens in the game. Thus, there are two main parts in this section, `Declaring Events`_ and
