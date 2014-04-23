@@ -3,11 +3,11 @@ Getting Started
 ======================
 
 So what now? When speaking about integrating a game with Infantium many developers get a little bit confused. Integrating
-a game with Infantium means communicating with our SDK at different points of your Apps, feeding with three different
-core sources of information, which is where we extract our Cognitive Analysis:
+a game with Infantium means communicating with our SDK at different points of your Apps, feeding it with three different
+core sources of information, which are where we extract the data for our Cognitive Analysis:
 
-* The *Elements* on the screen
-* The *Goals* (or objectives) that the kid must achieve
+* The *Elements* on the screen.
+* The *Goals* (or objectives) that the kid must achieve.
 * The actual *Interactions* that happen during game time.
 
 To do this there are a series of methods to be called at different parts of your code. For instance, the Elements and
