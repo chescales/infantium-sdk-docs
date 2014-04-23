@@ -12,5 +12,6 @@ Feel free to browse this section for learning advanced tricks when interacting w
     advanced_guides/elements.rst
     advanced_guides/goals.rst
     advanced_guides/basic_interaction.rst
+    advanced_guides/events.rst
     advanced_guides/adding_infantium_button.rst
     advanced_guides/override_android_cycle.rst
